@@ -1,7 +1,18 @@
 'use strict'
 console.log('sono connesso')
 
-const word = prompt("inserisci una parola e premi F12 per scoprire se è palindroma");
+//inizializiamo la variabile let
+let word
+
+
+//controllo se word ha valore numerico
+do{
+    word = prompt(`inserisci una parola e premi F12 per scoprire se è palindroma`)
+//richiediamo il dato fin tanto che è numerico
+}while  (!isNaN(parseFloat(word))); 
+
+
+
 
 console.log(`input preso dall'utente: ${word}` )
 
