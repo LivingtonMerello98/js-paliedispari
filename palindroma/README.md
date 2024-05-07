@@ -3,60 +3,50 @@ Chiedere all’utente di inserire una parola
 Creare una funzione per capire se la parola inserita è palindroma
 
 
-//chiedere all'utente attraverso prompt di inserire una parola
+//assegnamo a *word la funzione -control
 
-const word = prompt('inseirisci una parola e ti diremo se è palindroma');
+let word = control();
 
-//creare funzione(){}
+//definiamo la funzione -control
 
-function palindroma(word)
+function control(word){
 
-let reverseWord= "";  //variabile che conterra la parola invertita
-for (i of word) {   //percorro le lettere della parola in ordine inverso
-    reverseWord += i;     //aggiunge alla fine di reverseWord la lettera attuale
-}                       //quando finisce il for, reverseWord contiene la parola invertita
+    //richiediamo un prompt da parte dell'utente...
+    do{
 
+        word = prompt(`inserisci una parola e premi F12 per scoprire se è palindroma `)
 
+    //fin tanto che... questo risulta essere un numero o uno spazio vuoto
+    }while  (!isNaN(parseFloat(word))|| word === null || word.trim() === "");  
 
-if (reverseWord === word) {  //controlla se reverseWord è uguale a word
-    console.log("La tua parola è un palindromo");  //stampa su console "La tua parola è un palindromo"
-} else {
-    console.log("La tua parola non è un palindromo") ;     //stampa su console "La tua parola non è un palindromo"
+    //estraiamo word 
+    return word
+}
+
+//debug per controllare i valori con console.log
+
+//definiamo la funzione che palindroma() che stamperà la parola al contrario effetturà un controllo
+
+function palindroma(word){
+
+        //conterrà la parola invertita
+    let reverseWord = "";
+    //iteriamo all'inverso sulla parola inserita dall'utente
+    for (let i = word.length - 1; i >= 0; i--) {
+        // si stampa word in posizone index al contrario su reverseWord
+        reverseWord += word[i];
+    }
+        console.log(`parola correttamente invertita: ${reverseWord}`);
+
+    //comparare word con revrseWord 
+    if( word === reverseWord){
+        console.log(`la tua parola è un palindromo. -la tua parola: ${word} -la tua parola al contrario ${reverseWord}`)
+    }else{
+        console.log(`la tua parola non è un palindromo. la tua parola: ${word}-la tua parola al contrario ${reverseWord}`);
+    }
 
 }
 
+//richiamiamo la funzione
 
-
-//----------------------------------//
-
-controllo valore
-
--se numerico
-
-//utiliziamo un ciclo do-while per stabilire se il prompt è un numero o una parola
-//cambiamo da const a let inizializzando la variabile a 0 : let word
-
-let word
-
-do{ 
-    word = prompt ('Inserisci una parola e ti diremo se è palindroma');
- }while{
-    !isNaN(word); continuiamo a chiedere all utente finchè l'input è un numero
- }
-
-
--valore è vuoto
-
-//se la lavriabile è uguale a un campo nullo o vuoto
-chiediamo ll utente di inserire una parola
-
-//altrimenti entriamo nelaìla funzione palindroma() per determinare se la funzione è palindroma o meno
-
-if (word === null || word.trim() === " "){ //trim() per verificare che la stringa sia effettivamente vuota rimuoviao gli spazi con trim() e verifichiamo se c'è un reale contenuto con === " "
-
-    console.log(inserisci un valore)
-    alert inserisci un valore valido
-}else{
-    palindroma(word)
-}
-
+paindroma(word);
