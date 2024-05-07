@@ -52,7 +52,8 @@ chiediamo ll utente di inserire una parola
 
 //altrimenti entriamo nelaìla funzione palindroma() per determinare se la funzione è palindroma o meno
 
-if (word === null || word === " "){
+if (word === null || word.trim() === " "){ //trim() per verificare che la stringa sia effettivamente vuota rimuoviao gli spazi con trim() e verifichiamo se c'è un reale contenuto con === " "
+
     console.log(inserisci un valore)
     alert inserisci un valore valido
 }else{
