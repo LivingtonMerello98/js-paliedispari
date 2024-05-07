@@ -15,7 +15,15 @@ function palindroma(word){
         reverseWord += word[i];
     }
         console.log(`parola correttamente invertita: ${reverseWord}`);
-        return reverseWord;
+
+    //comparare word con revrseWord 
+    if( word === reverseWord){
+        console.log(`la tua parola è un palindromo: ${word} ${reverseWord}`)
+    }else{
+        console.log(`la tua parola non è un palindromo: ${word} ${reverseWord}`);
+    }
+
+        // return reverseWord;
 
 }
 
