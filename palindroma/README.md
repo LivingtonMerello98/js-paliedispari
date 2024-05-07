@@ -41,5 +41,21 @@ let word
 do{ 
     word = prompt ('Inserisci una parola e ti diremo se è palindroma');
  }while{
-    !isNaN(word);
+    !isNaN(word); continuiamo a chiedere all utente finchè l'input è un numero
  }
+
+
+-valore è vuoto
+
+//se la lavriabile è uguale a un campo nullo o vuoto
+chiediamo ll utente di inserire una parola
+
+//altrimenti entriamo nelaìla funzione palindroma() per determinare se la funzione è palindroma o meno
+
+if (word === null || word === " "){
+    console.log(inserisci un valore)
+    alert inserisci un valore valido
+}else{
+    palindroma(word)
+}
+
