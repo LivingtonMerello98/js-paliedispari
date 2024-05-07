@@ -11,7 +11,12 @@ do{
 //richiediamo il dato fin tanto che è numerico
 }while  (!isNaN(parseFloat(word))); 
 
-
+//controllo se word è vuoto o nullo
+if ( word === null || word.trim() === " "){
+    console.log(`inserisci un valore`);
+} else{
+    palindroma(word)
+}
 
 
 console.log(`input preso dall'utente: ${word}` )
@@ -21,7 +26,7 @@ function palindroma(word){
     //conterrà la parola invertita
     let reverseWord = "";
     //iteriamo all'inverso sulla parola inserita dall'utente
-    for (let i = word.length - 1; i >= 0; i--){
+    for (let i = word.length - 1; i >= 0; i--) {
         // si stampa word in posizone index al contrario su reverseWord
         reverseWord += word[i];
     }
